@@ -10,9 +10,7 @@ WORKDIR /app
 
 FROM base AS builder
 COPY package.json package-lock.json ./
-RUN npm config set registry https://registry.npmmirror.com \
- && npm config set replace-registry-host always \
- && npm ci --no-audit --no-fund
+RUN npm ci --registry=https://registry.npmmirror.com --no-audit --no-fund
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 # A throwaway SQLite database lets Payload prerender pages during the build.
