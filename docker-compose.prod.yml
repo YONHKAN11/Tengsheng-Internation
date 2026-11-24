@@ -1,0 +1,82 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: tengsheng
+      POSTGRES_USER: tengsheng
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U tengsheng']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  cms:
+    build:
+      context: ./cms
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://tengsheng:${DB_PASSWORD}@db:5432/tengsheng
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET}
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      PAYLOAD_PUSH: ${PAYLOAD_PUSH:-false}
+      MEDIA_DIR: /data/media
+      VIDEOS_DIR: /data/videos
+      DEPLOY_HOOK_URL: http://site-builder:8080/rebuild
+      PAYLOAD_PUBLIC_SERVER_URL: https://${DOMAIN}
+    volumes:
+      - media:/data/media
+      - videos:/data/videos
+    healthcheck:
+      test: ['CMD-SHELL', 'wget -q -O - http://127.0.0.1:3000/api/health || exit 1']
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+
+  site-builder:
+    build:
+      context: .
+      dockerfile: site-builder/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - cms
+    environment:
+      CMS_URL: http://cms:3000
+      PUBLIC_URL: https://${DOMAIN}
+      DIST_DIR: /srv/site
+    volumes:
+      - site-dist:/srv/site
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+    environment:
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - site-dist:/srv/site:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - cms
+      - site-builder
+
+volumes:
+  pgdata:
+  media:
+  videos:
+  site-dist:
+  caddy-data:
+  caddy-config:

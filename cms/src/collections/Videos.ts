@@ -34,7 +34,7 @@ export const Videos: CollectionConfig = {
     description: 'Vehicle walkarounds. MP4 (H.264), 1080p, under 50 MB each.',
   },
   upload: {
-    staticDir: 'videos',
+    staticDir: process.env.VIDEOS_DIR || 'videos',
     mimeTypes: ['video/*'],
   },
   fields: [

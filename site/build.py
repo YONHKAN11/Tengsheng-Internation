@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import html
 import json
+import os
 import re
 import shutil
 import sys
@@ -23,7 +24,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "content"
 ASSETS = ROOT / "assets"
-DIST = ROOT / "dist"
+DIST = Path(os.environ["DIST_DIR"]) if os.environ.get("DIST_DIR") else ROOT / "dist"
 
 SITE = json.loads((CONTENT / "site.json").read_text(encoding="utf-8"))
 VEHICLES = json.loads((CONTENT / "vehicles.json").read_text(encoding="utf-8"))["vehicles"]
@@ -602,7 +603,7 @@ def build_vehicles() -> str:
 {cta_html(prefix)}
 """
     description = "Browse new and pre-owned SUVs, pickups, sedans and electric vehicles available for export, with indicative FOB prices and specifications."
-    return page(prefix, "vehicles", "Vehicle inventory", description, body_html, canonical="vehicles.html", og_image=primary_image(VEHICLES[0]))
+    return page(prefix, "vehicles", "Vehicle inventory", description, body_html, canonical="vehicles.html", og_image=primary_image(VEHICLES[0]) if VEHICLES else "")
 
 
 def build_vehicle(v: dict) -> str:

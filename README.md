@@ -220,6 +220,29 @@ Cloudflare Pages（构建时从 CMS API 拉取内容）→ 全球 CDN
 
 ### 6.4 Railway（后台）
 
+#### 最简模式（推荐，只有 4 个变量）
+
+不配置 `S3_*`，媒体直接存 Railway Volume：
+
+1. Railway 服务 → **Volumes** → 新建一个卷，挂载到 `/data`。
+2. 环境变量只填：
+   ```
+   DATABASE_URL=postgresql://...   # Neon
+   PAYLOAD_SECRET=<长随机串>
+   ADMIN_EMAIL=admin@tengsheng.local
+   ADMIN_PASSWORD=<强密码>
+   MEDIA_DIR=/data/media
+   VIDEOS_DIR=/data/videos
+   PAYLOAD_PUSH=true               # 仅首次建表，成功后删除
+   ```
+3. 部署完成后访问 `https://<railway 域名>/admin`。
+4. 图片/视频 URL 形如 `https://<railway 域名>/api/media/file/...`，静态站构建时会自动转成绝对地址。
+5. 静态站可以继续用 Cloudflare Pages，也可以把 `发布包.zip` 拖到 Netlify（0 配置）。
+
+> Volume 单实例、备份需手动；图片量很大或需要多实例时，再改用 R2（配置 `S3_*` 即可自动切换）。
+
+#### 完整模式（R2 媒体）
+
 1. 把项目推到 GitHub，Railway → New Project → Deploy from GitHub，Root Directory 选 `cms`（`railway.toml` 已提供）。
 2. 环境变量：
    ```

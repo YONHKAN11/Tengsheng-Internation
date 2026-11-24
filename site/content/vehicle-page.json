@@ -1,5 +1,4 @@
 {
-  "id": 1,
   "pendingLabel": "Media pending",
   "mediaNote": "Photos and video for this vehicle are uploaded by our team in the admin panel. Request the latest media pack with your quotation.",
   "priceLabel": "Indicative FOB",
@@ -10,24 +9,24 @@
   "termsTitle": "Export terms",
   "terms": [
     {
-      "id": "6b0551b2036f4b6488c8d687",
       "label": "Terms",
-      "value": "FOB / CFR / CIF / DAP"
+      "value": "FOB / CFR / CIF / DAP",
+      "id": "6b0561358826a41c08798740"
     },
     {
-      "id": "6b0551b2036f4b6488c8d688",
       "label": "Shipping",
-      "value": "Ro-ro or container"
+      "value": "Ro-ro or container",
+      "id": "6b0561358826a41c08798741"
     },
     {
-      "id": "6b0551b2036f4b6488c8d689",
       "label": "Documents",
-      "value": "Full export set"
+      "value": "Full export set",
+      "id": "6b0561358826a41c08798742"
     },
     {
-      "id": "6b0551b2036f4b6488c8d68a",
       "label": "Inspection",
-      "value": "Report before payment"
+      "value": "Report before payment",
+      "id": "6b0561358826a41c08798743"
     }
   ],
   "whatsappLabel": "Inquire on WhatsApp",
@@ -37,8 +36,5 @@
   "sourcingText": "We source to order: other trims, colours, quantities and model years are available through our dealer network.",
   "sourcingLinkLabel": "Send a sourcing request →",
   "relatedEyebrow": "More inventory",
-  "relatedTitle": "You may also consider",
-  "updatedAt": "2026-11-24T08:58:26.608Z",
-  "createdAt": "2026-11-24T08:58:26.608Z",
-  "globalType": "vehicle-page"
+  "relatedTitle": "You may also consider"
 }

@@ -16,6 +16,8 @@ import { fileURLToPath } from 'node:url'
 const siteDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const contentDir = path.join(siteDir, 'content')
 const CMS_URL = (process.env.CMS_URL || 'http://localhost:3000').replace(/\/$/, '')
+// Public origin used for media URLs (different from the internal CMS URL in Docker).
+const PUBLIC_URL = (process.env.PUBLIC_URL || CMS_URL).replace(/\/$/, '')
 
 async function api(endpoint) {
   const url = `${CMS_URL}/api${endpoint}`
@@ -27,7 +29,7 @@ async function api(endpoint) {
 function absolute(url) {
   if (!url) return ''
   if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) return url
-  return `${CMS_URL}${url}`
+  return `${PUBLIC_URL}${url}`
 }
 
 function slugify(value) {

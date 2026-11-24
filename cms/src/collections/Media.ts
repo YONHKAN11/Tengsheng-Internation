@@ -34,7 +34,7 @@ export const Media: CollectionConfig = {
     description: 'Vehicle photos. JPG or WebP, around 1600 px wide, under 400 KB each.',
   },
   upload: {
-    staticDir: 'media',
+    staticDir: process.env.MEDIA_DIR || 'media',
     mimeTypes: ['image/*'],
     focalPoint: true,
     imageSizes: [

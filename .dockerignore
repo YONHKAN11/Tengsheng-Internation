@@ -1,0 +1,16 @@
+cms/node_modules
+cms/.next
+cms/*.db
+cms/*.db-*
+cms/.env
+cms/media
+cms/videos
+runtime
+.git
+.gitignore
+site/dist
+site/assets/img/uploads
+site/assets/img/brands
+site/assets/video
+*.zip
+README.md

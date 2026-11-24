@@ -1,0 +1,34 @@
+{$DOMAIN} {
+	encode zstd gzip
+
+	handle /admin* {
+		reverse_proxy cms:3000
+	}
+
+	handle /api* {
+		reverse_proxy cms:3000
+	}
+
+	handle /_next* {
+		reverse_proxy cms:3000
+	}
+
+	handle {
+		root * /srv/site
+		try_files {path} {path}.html {path}/index.html /404.html
+		file_server
+	}
+
+	handle_errors {
+		root * /srv/site
+		rewrite * /404.html
+		file_server
+	}
+
+	header {
+		X-Content-Type-Options nosniff
+		X-Frame-Options SAMEORIGIN
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+}
