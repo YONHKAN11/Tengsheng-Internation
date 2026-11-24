@@ -9,6 +9,8 @@
 - 域名已解析到服务器公网 IP（A 记录 `@` 与 `www`）
 - 防火墙放行 22 / 80 / 443
 
+> **还没有域名？** 可以先用公网 IP 测试：把 `deploy.env` 的 `DOMAIN` 填成 `43.108.40.121`，`deploy.sh` 会自动使用 HTTP 模式（无 HTTPS）。买好域名、解析生效后，把 `DOMAIN` 改成域名并重新运行 `deploy.sh`，就会自动申请 HTTPS 证书。
+
 ## 1. 连接服务器
 
 ```powershell

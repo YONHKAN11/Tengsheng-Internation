@@ -33,6 +33,16 @@ if [ "${ADMIN_PASSWORD}" = "change-this" ]; then
   exit 1
 fi
 
+if printf '%s' "${DOMAIN}" | grep -Eq '^([0-9]{1,3}\.){3}[0-9]{1,3}$'; then
+  PUBLIC_URL="http://${DOMAIN}"
+  CADDYFILE="Caddyfile.ip"
+  echo "检测到 IP 地址：使用 HTTP 模式（无 HTTPS）。绑定域名后修改 DOMAIN 并重新运行即可启用 HTTPS。"
+else
+  PUBLIC_URL="https://${DOMAIN}"
+  CADDYFILE="Caddyfile"
+fi
+export PUBLIC_URL CADDYFILE
+
 if [ "${PAYLOAD_SECRET}" = "change-this" ] || [ -z "${PAYLOAD_SECRET:-}" ]; then
   PAYLOAD_SECRET="$(openssl rand -hex 32)"
   sed -i "s|^PAYLOAD_SECRET=.*|PAYLOAD_SECRET=${PAYLOAD_SECRET}|" deploy.env

@@ -31,7 +31,7 @@ services:
       MEDIA_DIR: /data/media
       VIDEOS_DIR: /data/videos
       DEPLOY_HOOK_URL: http://site-builder:8080/rebuild
-      PAYLOAD_PUBLIC_SERVER_URL: https://${DOMAIN}
+      PAYLOAD_PUBLIC_SERVER_URL: ${PUBLIC_URL}
     volumes:
       - media:/data/media
       - videos:/data/videos
@@ -51,7 +51,7 @@ services:
       - cms
     environment:
       CMS_URL: http://cms:3000
-      PUBLIC_URL: https://${DOMAIN}
+      PUBLIC_URL: ${PUBLIC_URL}
       DIST_DIR: /srv/site
     volumes:
       - site-dist:/srv/site
@@ -65,7 +65,7 @@ services:
     environment:
       DOMAIN: ${DOMAIN}
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./${CADDYFILE:-Caddyfile}:/etc/caddy/Caddyfile:ro
       - site-dist:/srv/site:ro
       - caddy-data:/data
       - caddy-config:/config
