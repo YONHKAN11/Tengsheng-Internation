@@ -16,7 +16,6 @@ ENV NEXT_TELEMETRY_DISABLED=1
 # A throwaway SQLite database lets Payload prerender pages during the build.
 ENV DATABASE_URL=file:./build.db
 ENV PAYLOAD_SECRET=build-only-secret
-ENV PAYLOAD_PUSH=true
 ENV SKIP_SEED=true
 RUN mkdir -p public && npm run build && npm prune --omit=dev
 

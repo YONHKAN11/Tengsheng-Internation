@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { getBrands, getCompany } from '@/lib/site'
 
+export const dynamic = 'force-dynamic'
+
 export default async function HomePage() {
   const [company, brands] = await Promise.all([getCompany(), getBrands(true)])
   const featuredBrands = brands.slice(0, 6)

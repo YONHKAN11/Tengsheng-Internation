@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { getBrands } from '@/lib/site'
 
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = { title: 'Brands' }
 
 export default async function BrandsPage() {

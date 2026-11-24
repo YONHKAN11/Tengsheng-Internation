@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { getCompany } from '@/lib/site'
 
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = { title: 'Our Process' }
 
 export default async function ProcessPage() {
