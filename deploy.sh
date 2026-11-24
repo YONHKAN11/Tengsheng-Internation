@@ -53,8 +53,11 @@ if [ "${DB_PASSWORD}" = "change-this" ] || [ -z "${DB_PASSWORD:-}" ]; then
   sed -i "s|^DB_PASSWORD=.*|DB_PASSWORD=${DB_PASSWORD}|" deploy.env
 fi
 
-echo "开始构建并启动（首次约 5–10 分钟）..."
-docker compose --env-file deploy.env -f docker-compose.prod.yml up -d --build
+echo "拉取镜像（由 GitHub Actions 构建）..."
+docker compose --env-file deploy.env -f docker-compose.prod.yml pull
+
+echo "启动服务..."
+docker compose --env-file deploy.env -f docker-compose.prod.yml up -d
 
 echo
 echo "启动完成：https://${DOMAIN}/admin"

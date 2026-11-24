@@ -15,6 +15,7 @@ services:
       retries: 10
 
   cms:
+    image: ghcr.io/yonhkan11/tengsheng-cms:latest
     build:
       context: ./cms
       dockerfile: Dockerfile
@@ -43,6 +44,7 @@ services:
       start_period: 60s
 
   site-builder:
+    image: ghcr.io/yonhkan11/tengsheng-site-builder:latest
     build:
       context: .
       dockerfile: site-builder/Dockerfile

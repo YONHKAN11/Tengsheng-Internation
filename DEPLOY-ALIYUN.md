@@ -65,13 +65,37 @@ PAYLOAD_PUSH=true
 
 `DB_PASSWORD` 和 `PAYLOAD_SECRET` 保持 `change-this`，脚本会自动生成。
 
-## 5. 启动
+## 5. 镜像构建（GitHub Actions）
+
+代码推到 GitHub 后，Actions 会自动构建两个镜像：
+
+```
+ghcr.io/yonhkan11/tengsheng-cms:latest
+ghcr.io/yonhkan11/tengsheng-site-builder:latest
+```
+
+首次使用需要把这两个包设为**公开**，否则服务器拉取会报 `401 Unauthorized`：
+
+1. GitHub → 右上角头像 → **Your packages**
+2. 分别打开 `tengsheng-cms`、`tengsheng-site-builder`
+3. **Package settings → Change visibility → Public**
+
+不想公开的话，在服务器上登录 GHCR：
+
+```bash
+docker login ghcr.io -u YONHKAN11
+# 密码填 GitHub Personal Access Token（需要 read:packages 权限）
+```
+
+查看构建进度：GitHub 仓库 → **Actions** → **Build container images**。
+
+## 6. 启动（服务器只拉取，不构建）
 
 ```bash
 bash deploy.sh
 ```
 
-首次会构建镜像，约 5–10 分钟。
+脚本会 `docker compose pull` 拉取镜像，然后 `up -d` 启动，服务器不执行 Next 构建。
 
 查看日志：
 
