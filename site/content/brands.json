@@ -1,0 +1,124 @@
+{
+  "brands": [
+    {
+      "slug": "hyundai",
+      "name": "Hyundai",
+      "origin": "South Korea",
+      "description": "Well-equipped SUVs and hybrids with strong warranties.",
+      "website": "",
+      "featured": false,
+      "sortOrder": 100,
+      "logo": "",
+      "cover": "",
+      "vehicleCount": 1
+    },
+    {
+      "slug": "ford",
+      "name": "Ford",
+      "origin": "USA",
+      "description": "Pickups and performance trucks built for rough roads.",
+      "website": "",
+      "featured": false,
+      "sortOrder": 100,
+      "logo": "",
+      "cover": "",
+      "vehicleCount": 1
+    },
+    {
+      "slug": "tesla",
+      "name": "Tesla",
+      "origin": "USA",
+      "description": "Long-range electric vehicles with global charging access.",
+      "website": "",
+      "featured": true,
+      "sortOrder": 100,
+      "logo": "",
+      "cover": "",
+      "vehicleCount": 1
+    },
+    {
+      "slug": "volkswagen",
+      "name": "Volkswagen",
+      "origin": "Germany",
+      "description": "Discreet premium SUVs and value-focused passenger cars.",
+      "website": "",
+      "featured": false,
+      "sortOrder": 100,
+      "logo": "",
+      "cover": "",
+      "vehicleCount": 1
+    },
+    {
+      "slug": "audi",
+      "name": "Audi",
+      "origin": "Germany",
+      "description": "quattro all-wheel-drive SUVs with advanced technology.",
+      "website": "",
+      "featured": false,
+      "sortOrder": 100,
+      "logo": "",
+      "cover": "",
+      "vehicleCount": 1
+    },
+    {
+      "slug": "mercedes-benz",
+      "name": "Mercedes-Benz",
+      "origin": "Germany",
+      "description": "Executive SUVs and sedans with strong resale value.",
+      "website": "",
+      "featured": true,
+      "sortOrder": 100,
+      "logo": "",
+      "cover": "",
+      "vehicleCount": 1
+    },
+    {
+      "slug": "bmw",
+      "name": "BMW",
+      "origin": "Germany",
+      "description": "European premium SUVs and sedans, left-hand drive.",
+      "website": "",
+      "featured": true,
+      "sortOrder": 100,
+      "logo": "",
+      "cover": "",
+      "vehicleCount": 1
+    },
+    {
+      "slug": "nissan",
+      "name": "Nissan",
+      "origin": "Japan",
+      "description": "Patrol and pickups with strong Gulf and African demand.",
+      "website": "",
+      "featured": false,
+      "sortOrder": 100,
+      "logo": "",
+      "cover": "",
+      "vehicleCount": 1
+    },
+    {
+      "slug": "lexus",
+      "name": "Lexus",
+      "origin": "Japan",
+      "description": "Premium SUVs and sedans on proven Toyota platforms.",
+      "website": "",
+      "featured": false,
+      "sortOrder": 100,
+      "logo": "",
+      "cover": "",
+      "vehicleCount": 1
+    },
+    {
+      "slug": "toyota",
+      "name": "Toyota",
+      "origin": "Japan",
+      "description": "Full-size SUVs, pickups and hybrids with global parts coverage.",
+      "website": "",
+      "featured": true,
+      "sortOrder": 100,
+      "logo": "",
+      "cover": "",
+      "vehicleCount": 3
+    }
+  ]
+}

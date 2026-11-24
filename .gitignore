@@ -1,0 +1,23 @@
+# dependencies / build output
+cms/node_modules/
+cms/.next/
+runtime/
+
+# local database, media and secrets
+cms/*.db
+cms/*.db-*
+cms/.env
+cms/media/
+cms/videos/
+
+# generated media and build output for the static site
+site/assets/img/uploads/
+site/assets/img/brands/
+site/assets/video/
+site/dist/
+*.zip
+
+# tooling
+.DS_Store
+Thumbs.db
+*.log

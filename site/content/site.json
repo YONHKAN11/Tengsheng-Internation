@@ -1,0 +1,166 @@
+{
+  "name": "Tengsheng International Co., Limited",
+  "shortName": "Tengsheng International",
+  "wordmark": "TENGSHENG",
+  "wordmarkSuffix": "INTERNATIONAL",
+  "tagline": "Vehicle Export & Global Supply",
+  "baseUrl": "",
+  "description": "Tengsheng International exports new and pre-owned vehicles to dealers, fleets and private buyers across the Middle East, Africa, Latin America, Central Asia and Southeast Asia.",
+  "contact": {
+    "email": "qdeng4349@gmail.com",
+    "whatsapp": "+1 602 538 6777",
+    "whatsappNumber": "16025386777",
+    "response": "Global inquiries · reply within 24 hours"
+  },
+  "hero": {
+    "eyebrow": "International vehicle export",
+    "title": "The right vehicle, from source to shore.",
+    "subtitle": "Tengsheng International sources, inspects and ships new and pre-owned vehicles to dealers, fleet operators and private buyers across six export regions — with one team handling the paperwork, freight and delivery.",
+    "primaryCta": {
+      "label": "Browse inventory",
+      "href": "vehicles.html"
+    },
+    "secondaryCta": {
+      "label": "Request a quote",
+      "href": "contact.html"
+    },
+    "image": "assets/img/hero.svg",
+    "imageAlt": "Vehicle loaded and ready for export"
+  },
+  "trust": [
+    "Authorised-dealer sourcing",
+    "Multi-point inspection",
+    "Export documentation",
+    "Door-to-door logistics"
+  ],
+  "stats": [
+    {
+      "value": "10+",
+      "label": "Brands sourced"
+    },
+    {
+      "value": "6",
+      "label": "Export regions"
+    },
+    {
+      "value": "New & used",
+      "label": "Vehicle supply"
+    },
+    {
+      "value": "24h",
+      "label": "Quote response"
+    }
+  ],
+  "featured": {
+    "eyebrow": "Available now",
+    "title": "Featured inventory",
+    "intro": "A selection of units currently available for export. Specifications, condition reports and additional photographs are shared on request.",
+    "linkLabel": "View all inventory",
+    "linkHref": "vehicles.html"
+  },
+  "strengths": {
+    "eyebrow": "Why Tengsheng",
+    "title": "One partner, from inquiry to arrival.",
+    "intro": "Cross-border vehicle buying fails on details: unclear history, incomplete documents, missed sailing dates. We run each of those details in-house.",
+    "items": [
+      {
+        "title": "Direct sourcing",
+        "description": "We buy from authorised dealers, leasing fleets and closed auctions — not the open retail market — so specification and history can be verified before you commit."
+      },
+      {
+        "title": "Inspected & documented",
+        "description": "Every unit is photographed, condition-reported and checked against its documents. You approve the file before payment and before loading."
+      },
+      {
+        "title": "Export-ready paperwork",
+        "description": "Invoice, packing list, certificate of origin, bill of lading, insurance and destination-specific compliance documents prepared as one set."
+      },
+      {
+        "title": "Freight & delivery",
+        "description": "FOB, CFR, CIF or DAP terms with ro-ro or container shipping, marine insurance and customs support at destination."
+      }
+    ]
+  },
+  "markets": {
+    "eyebrow": "Where we ship",
+    "title": "Six regions. One export desk.",
+    "intro": "We focus on left-hand-drive markets with established shipping lanes and clear import rules. If your country is not listed, send us the destination port and we will confirm feasibility.",
+    "linkLabel": "Markets & logistics",
+    "linkHref": "markets.html"
+  },
+  "process": {
+    "eyebrow": "How it works",
+    "title": "A clear path to delivery.",
+    "intro": "Six steps, one point of contact, no surprises between quotation and arrival.",
+    "linkLabel": "See the full process",
+    "linkHref": "process.html",
+    "steps": [
+      {
+        "title": "Inquiry",
+        "description": "Share the make, model, year, trim and quantity, plus your destination port and preferred Incoterms."
+      },
+      {
+        "title": "Sourcing & quotation",
+        "description": "We confirm availability, condition and FOB price, then add a freight estimate for your port."
+      },
+      {
+        "title": "Inspection & approval",
+        "description": "You receive a full photo set, condition report, mileage and document summary before payment."
+      },
+      {
+        "title": "Contract & payment",
+        "description": "Proforma invoice and sales contract issued under agreed terms, with a clear deposit and balance schedule."
+      },
+      {
+        "title": "Export & shipping",
+        "description": "Booking, loading, bill of lading, insurance and certificates handled by our export desk."
+      },
+      {
+        "title": "Arrival & after-sales",
+        "description": "Destination clearance support, delivery coordination and follow-up on parts or accessories."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Tell us what you need. We will source it.",
+    "subtitle": "Send a model, a destination port and a target budget. You will receive availability, condition and a delivered cost estimate.",
+    "label": "Start an inquiry",
+    "href": "contact.html"
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "Built for cross-border vehicle trade.",
+    "lead": "Tengsheng International Co., Limited is a vehicle export house supplying new and pre-owned cars, SUVs, pickups and electric vehicles to dealers, fleet operators and private buyers across six export regions.",
+    "paragraphs": [
+      "We work at the point where sourcing, compliance and freight meet. Instead of handing you a list of cars and a shipping contact, we assemble the whole transaction: a verified unit, a condition file, the export documents, a booking on a known sailing and a named person who answers while the vehicle is in transit.",
+      "Our supply comes from authorised dealer groups, corporate and leasing fleets, and closed auction channels. That access lets us match exact trims and specifications — including left-hand-drive and GCC-spec vehicles — rather than offering whatever happens to be on a retail lot.",
+      "Every market has its own rules on vehicle age, emissions, homologation and documentation. We check those rules before quoting, so a price you receive is a price that can actually be cleared at destination."
+    ],
+    "principlesTitle": "How we work",
+    "principles": [
+      {
+        "title": "Transparency first",
+        "description": "Photographs, condition notes, mileage and document status are shared before you pay. If a unit is not right, we say so."
+      },
+      {
+        "title": "Documents done properly",
+        "description": "Export files are prepared to the destination country's requirements, not assembled after the vessel sails."
+      },
+      {
+        "title": "One accountable contact",
+        "description": "The person who quotes your vehicle stays with the order through booking, shipping and arrival."
+      }
+    ],
+    "capabilitiesTitle": "What we handle",
+    "capabilities": [
+      "New and pre-owned vehicles",
+      "SUVs, pickups, sedans and MPVs",
+      "Petrol, diesel, hybrid and electric",
+      "Dealer, fleet and mixed-container orders",
+      "Left-hand-drive and GCC specifications",
+      "Export documentation and certification",
+      "Ro-ro and container freight",
+      "Marine insurance and destination support"
+    ]
+  }
+}

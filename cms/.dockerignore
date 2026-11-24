@@ -1,0 +1,14 @@
+node_modules
+.next
+media
+videos
+*.db
+*.db-*
+*.db.backup-*
+.env
+.env.*
+.git
+.gitignore
+npm-debug.log*
+Dockerfile
+docker-compose.yml

@@ -1,0 +1,135 @@
+{
+  "eyebrow": "Markets & logistics",
+  "title": "Where we ship.",
+  "intro": "We concentrate on left-hand-drive markets with established shipping lanes and clear import rules. Each region below lists the destinations we quote most often; if your country is not shown, send us the port and we will confirm feasibility, transit time and documentation.",
+  "regions": [
+    {
+      "name": "Middle East",
+      "summary": "Gulf states and the Levant — the strongest demand for full-size SUVs, pickups and GCC-specification vehicles.",
+      "countries": [
+        "Saudi Arabia",
+        "United Arab Emirates",
+        "Qatar",
+        "Kuwait",
+        "Bahrain",
+        "Oman",
+        "Jordan",
+        "Iraq",
+        "Yemen"
+      ],
+      "logistics": "Frequent ro-ro and container sailings from Jebel Ali. GCC specification and Arabic documentation available.",
+      "ports": ["Jebel Ali", "Dammam", "Hamad", "Shuwaikh", "Aqaba"]
+    },
+    {
+      "name": "Africa",
+      "summary": "North, West and East African markets, with a focus on durability, parts availability and age-eligible units.",
+      "countries": [
+        "Egypt",
+        "Nigeria",
+        "Ghana",
+        "Algeria",
+        "Libya",
+        "Ethiopia",
+        "Angola",
+        "Senegal",
+        "Côte d'Ivoire"
+      ],
+      "logistics": "Age and emission limits vary by country. We screen eligibility before quoting and prepare pre-shipment inspection where required.",
+      "ports": ["Alexandria", "Lagos", "Tema", "Algiers", "Djibouti", "Luanda", "Dakar", "Abidjan"]
+    },
+    {
+      "name": "Latin America",
+      "summary": "South and Central American buyers of SUVs, pickups and electric vehicles, supplied in left-hand-drive specification.",
+      "countries": [
+        "Chile",
+        "Peru",
+        "Bolivia",
+        "Colombia",
+        "Costa Rica",
+        "Dominican Republic",
+        "Uruguay",
+        "Mexico"
+      ],
+      "logistics": "Container and ro-ro service via Pacific and Atlantic hubs. Spanish-language documents and homologation checks supported.",
+      "ports": ["San Antonio", "Callao", "Iquique", "Cartagena", "Puerto Limón", "Montevideo", "Manzanillo"]
+    },
+    {
+      "name": "Central Asia & Caucasus",
+      "summary": "Fast-growing import corridors for SUVs, crossovers and electric vehicles, served by rail and road as well as sea.",
+      "countries": [
+        "Kazakhstan",
+        "Uzbekistan",
+        "Turkmenistan",
+        "Kyrgyzstan",
+        "Tajikistan",
+        "Azerbaijan",
+        "Georgia",
+        "Armenia"
+      ],
+      "logistics": "Rail and road corridors via Khorgos and Alashankou, or sea to Poti and Bandar Abbas. Customs union documentation prepared for EAEU destinations.",
+      "ports": ["Khorgos", "Alashankou", "Poti", "Bandar Abbas", "Aktau"]
+    },
+    {
+      "name": "Southeast Asia",
+      "summary": "Short-sea and container routes for left- and right-hand-drive markets across the region.",
+      "countries": [
+        "Philippines",
+        "Vietnam",
+        "Myanmar",
+        "Cambodia",
+        "Laos",
+        "Malaysia",
+        "Indonesia"
+      ],
+      "logistics": "Left- and right-hand-drive options with short transit times from East Asian ports. Import licensing and inspection requirements confirmed per country.",
+      "ports": ["Manila", "Ho Chi Minh City", "Yangon", "Sihanoukville", "Port Klang", "Belawan"]
+    },
+    {
+      "name": "Russia & Belarus",
+      "summary": "Vehicle supply into Russia and Belarus, subject to sanctions screening and permitted payment routes.",
+      "countries": ["Russia", "Belarus"],
+      "logistics": "Every order is screened before quotation. Permitted payment routes, documentation and transport corridors are confirmed in writing.",
+      "ports": ["St Petersburg", "Novorossiysk", "Vladivostok", "Minsk (road)"]
+    }
+  ],
+  "incoterms": [
+    {
+      "code": "FOB",
+      "name": "Free On Board",
+      "description": "We deliver the vehicle cleared for export on board the vessel at the named origin port. You arrange and pay the main freight and insurance."
+    },
+    {
+      "code": "CFR",
+      "name": "Cost and Freight",
+      "description": "We cover origin costs and ocean freight to your destination port. Risk transfers when the vehicle is loaded on board."
+    },
+    {
+      "code": "CIF",
+      "name": "Cost, Insurance and Freight",
+      "description": "As CFR, with marine insurance arranged and paid by us to the destination port."
+    },
+    {
+      "code": "DAP",
+      "name": "Delivered at Place",
+      "description": "We arrange carriage to an agreed destination point. Import duty, taxes and clearance remain with the buyer unless quoted separately."
+    }
+  ],
+  "logisticsPoints": [
+    {
+      "title": "Shipping methods",
+      "description": "Ro-ro for driveable units and containers for mixed or high-value orders. We recommend the method that protects the vehicle and the budget."
+    },
+    {
+      "title": "Marine insurance",
+      "description": "All-risk cover available under CIF terms or arranged on your behalf, with the certificate issued in the consignee's name."
+    },
+    {
+      "title": "Documentation",
+      "description": "Commercial invoice, packing list, bill of lading, certificate of origin, export declaration, insurance certificate and destination-specific compliance documents."
+    },
+    {
+      "title": "Destination support",
+      "description": "We work with clearing agents at major ports and can introduce a trusted partner, or coordinate with your own broker."
+    }
+  ]
+}
