@@ -7,7 +7,9 @@ WORKDIR /app
 
 FROM base AS builder
 COPY package.json package-lock.json ./
-RUN npm ci --no-audit --no-fund
+RUN npm config set registry https://registry.npmmirror.com \
+ && npm config set replace-registry-host always \
+ && npm ci --no-audit --no-fund
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 # A throwaway SQLite database lets Payload prerender pages during the build.
@@ -26,7 +28,10 @@ RUN addgroup -S nodejs -g 1001 && adduser -S nextjs -u 1001
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm ci --omit=dev --no-audit --no-fund && npm cache clean --force
+RUN npm config set registry https://registry.npmmirror.com \
+ && npm config set replace-registry-host always \
+ && npm ci --omit=dev --no-audit --no-fund \
+ && npm cache clean --force
 
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
