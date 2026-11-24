@@ -17,6 +17,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV DATABASE_URL=file:./build.db
 ENV PAYLOAD_SECRET=build-only-secret
 ENV PAYLOAD_PUSH=true
+ENV SKIP_SEED=true
 RUN mkdir -p public && npm run build && npm prune --omit=dev
 
 FROM node:22.23.5-bookworm-slim AS runner

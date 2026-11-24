@@ -65,6 +65,8 @@ const VEHICLE_PAGE = {
 }
 
 export async function seed(payload: Payload): Promise<string[]> {
+  if (process.env.SKIP_SEED === 'true') return []
+
   const seeded: string[] = []
 
   // 1. Administrator
