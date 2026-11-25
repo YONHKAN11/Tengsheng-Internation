@@ -615,13 +615,13 @@ def build_vehicle(v: dict) -> str:
     for i, img in enumerate(images):
         thumbs.append(
             f'<button class="gallery-thumb{" is-active" if i == 0 else ""}" type="button" data-type="image" '
-            f'data-src="{prefix}{esc(img["src"])}" data-alt="{esc(img["alt"])}" aria-label="View photo {i + 1} of {esc(v["name"])}">'
+            f'data-src="{esc(media_src(img["src"], prefix))}" data-alt="{esc(img["alt"])}" aria-label="View photo {i + 1} of {esc(v["name"])}">'
             f'<img src="{esc(media_src(img["src"], prefix))}" alt="" loading="lazy"></button>'
         )
     for i, vid in enumerate(videos):
         thumbs.append(
             f'<button class="gallery-thumb gallery-thumb-video" type="button" data-type="video" '
-            f'data-src="{prefix}{esc(vid["src"])}" aria-label="Play video {i + 1} of {esc(v["name"])}">'
+            f'data-src="{esc(media_src(vid["src"], prefix))}" aria-label="Play video {i + 1} of {esc(v["name"])}">'
             f'<span class="thumb-video"><span class="thumb-play" aria-hidden="true">▶</span><span>Video {i + 1}</span></span></button>'
         )
     gallery_thumbs = "".join(thumbs)
