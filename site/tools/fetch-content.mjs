@@ -178,6 +178,22 @@ async function main() {
     }
     if (company.heroTitle) site.hero.title = company.heroTitle
     if (company.heroSubtitle) site.hero.subtitle = company.heroSubtitle
+    if (company.aboutTitle) site.about.title = company.aboutTitle
+    if (Array.isArray(company.strengths) && company.strengths.length) {
+      site.strengths.items = company.strengths.map((item) => ({
+        title: item.title,
+        description: item.description || '',
+      }))
+    }
+    if (Array.isArray(company.stats) && company.stats.length) {
+      site.stats = company.stats.map((item) => ({ value: item.value, label: item.label }))
+    }
+    if (Array.isArray(company.processSteps) && company.processSteps.length) {
+      site.process.steps = company.processSteps.map((item) => ({
+        title: item.title,
+        description: item.description || '',
+      }))
+    }
     await fs.writeFile(
       path.join(contentDir, 'site.json'),
       `${JSON.stringify(site, null, 2)}\n`,
