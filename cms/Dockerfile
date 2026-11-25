@@ -1,6 +1,6 @@
 # Production image for the Payload CMS (Next.js, `next start`).
 # Debian slim is used instead of Alpine because sharp / libsql ship glibc
-# prebuilds; if a native build is ever needed, python3/make/g++ are present.
+# prebuilds; python3/make/g++ are present in the builder for native builds.
 
 FROM node:22.23.5-bookworm-slim AS base
 RUN apt-get update \
@@ -17,7 +17,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV DATABASE_URL=file:./build.db
 ENV PAYLOAD_SECRET=build-only-secret
 ENV SKIP_SEED=true
-RUN mkdir -p public && npm run build && npm prune --omit=dev
+RUN mkdir -p public && npm run build
 
 FROM node:22.23.5-bookworm-slim AS runner
 RUN apt-get update \
@@ -38,9 +38,15 @@ COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/next.config.ts ./next.config.ts
+COPY --from=builder --chown=nextjs:nodejs /app/tsconfig.json ./tsconfig.json
+COPY --from=builder --chown=nextjs:nodejs /app/src ./src
+COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
+COPY --from=builder --chown=nextjs:nodejs /app/docker-entrypoint.sh ./docker-entrypoint.sh
 
-RUN mkdir -p media videos && chown -R nextjs:nodejs media videos
+RUN chmod +x docker-entrypoint.sh \
+ && mkdir -p media videos \
+ && chown -R nextjs:nodejs media videos
 
 USER nextjs
 EXPOSE 3000
-CMD ["npm", "run", "start"]
+CMD ["sh", "/app/docker-entrypoint.sh"]
