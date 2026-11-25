@@ -1,4 +1,4 @@
-{$DOMAIN} {
+{$DOMAIN}, www.{$DOMAIN} {
 	encode zstd gzip
 
 	handle /admin* {
