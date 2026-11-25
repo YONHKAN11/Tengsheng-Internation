@@ -44,8 +44,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
 COPY --from=builder --chown=nextjs:nodejs /app/docker-entrypoint.sh ./docker-entrypoint.sh
 
 RUN chmod +x docker-entrypoint.sh \
- && mkdir -p media videos \
- && chown -R nextjs:nodejs media videos
+ && mkdir -p media videos /data/media /data/videos \
+ && chown -R nextjs:nodejs media videos /data
 
 USER nextjs
 EXPOSE 3000
